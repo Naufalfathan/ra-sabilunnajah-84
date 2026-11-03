@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RA PERSIS 84 - Template</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome & Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            /* Palet Warna Utama */
+            --persis-green: #0A6A3F; /* Hijau khas/gelap */
+            --persis-yellow: #F4B400; /* Kuning aksen */
+            --light-bg: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Offset for sticky navbar so it doesn't cover section titles */
+        section {
+            padding-top: 80px;
+            padding-bottom: 80px;
+            scroll-margin-top: 50px; 
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: var(--persis-green);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--persis-yellow) !important;
+        }
+        .nav-link {
+            font-weight: 600;
+            color: white !important;
+            transition: 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--persis-yellow) !important;
+        }
+
+        /* Hero Section */
+        #beranda {
+            background: linear-gradient(rgba(10, 106, 63, 0.8), rgba(10, 106, 63, 0.8)), url('https://placehold.co/1920x1080/2c3e50/ecf0f1?text=Foto+Gedung+Sekolah/Anak+Bermain') center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        .btn-custom-yellow {
+            background-color: var(--persis-yellow);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .btn-custom-yellow:hover {
+            background-color: #d49c00;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Section Headings */
+        .section-title {
+            color: var(--persis-green);
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--persis-yellow);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Cards in Program */
+        .card-program {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            height: 100%;
+        }
+        .card-program:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .card-icon {
+            font-size: 3rem;
+            color: var(--persis-green);
+            margin-bottom: 15px;
+        }
+
+        /* Gallery Images */
+        .gallery-img {
+            border-radius: 10px;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #064426; /* Dark Green */
+            color: white;
+            padding: 40px 0 20px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 2.2rem;
+            margin: 0 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            color: var(--persis-yellow) !important;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70" tabindex="0">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#beranda"><i class="fa-solid fa-graduation-cap"></i> RA PERSIS 84</a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" style="border-color: white;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profil">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#program">Program</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fasilitas">Fasilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Beranda Section -->
+    <header id="beranda">
+        <div class="container text-center text-md-start">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Selamat Datang di <br> <span style="color: var(--persis-yellow);">[NAMA RA PERSIS 84]</span></h1>
+                    <p class="lead mb-4">[Tulis 1-2 kalimat sambutan dari kepala sekolah di sini. Contoh: Tempat terbaik bagi buah hati Anda untuk tumbuh cerdas, ceria, dan berakhlak mulia berdasarkan Al-Qur'an dan As-Sunnah.]</p>
+                    <a href="#kontak" class="btn btn-custom-yellow btn-lg"><i class="fa-brands fa-whatsapp"></i> Informasi Pendaftaran</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profil Section -->
+    <section id="profil" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Profil Sekolah</h2>
+            <div class="row mt-5">
+                <div class="col-md-6 mb-4">
+                    <img src="https://placehold.co/600x400/0A6A3F/FFF?text=Foto+Bersama/Gedung" alt="Profil RA" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h4 class="fw-bold" style="color: var(--persis-green);">Sejarah Singkat</h4>
+                    <p>[Isi sejarah singkat berdirinya RA PERSIS 84 di sini. Maksimal 2 paragraf agar pengunjung tidak bosan membacanya. Tempel hasil wawancara di sini.]</p>
+                    
+                    <h4 class="fw-bold mt-4" style="color: var(--persis-green);">Visi</h4>
+                    <p class="fst-italic">"[Tulis teks Visi resmi sekolah di sini]"</p>
+
+                    <h4 class="fw-bold mt-3" style="color: var(--persis-green);">Misi</h4>
+                    <ul class="list-group list-group-flush shadow-sm">
+                        <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> [Poin Misi 1]</li>
+                        <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> [Poin Misi 2]</li>
+                        <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> [Poin Misi 3]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="program">
+        <div class="container">
+            <h2 class="section-title">Program Unggulan</h2>
+            <div class="row mt-5 text-center">
+                <!-- Program 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card card-program p-4">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-book-quran"></i>
+                        </div>
+                        <h4 class="fw-bold">Tahfidz Qur'an</h4>
+                        <p>[Deskripsi singkat program, misal: Pengenalan dan hafalan surat-surat pendek dengan metode yang menyenangkan bagi anak.]</p>
+                    </div>
+                </div>
+                <!-- Program 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card card-program p-4">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h4 class="fw-bold">Kreativitas Seni</h4>
+                        <p>[Deskripsi singkat program, misal: Mengembangkan motorik halus anak melalui kegiatan menggambar, mewarnai, dan kerajinan tangan.]</p>
+                    </div>
+                </div>
+                <!-- Program 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card card-program p-4">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-person-praying"></i>
+                        </div>
+                        <h4 class="fw-bold">Praktik Ibadah</h4>
+                        <p>[Deskripsi singkat program, misal: Pembiasaan wudhu dan shalat berjamaah sejak dini untuk menanamkan nilai-nilai keislaman.]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas Section -->
+    <section id="fasilitas" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Fasilitas Sekolah</h2>
+            <p class="text-center mb-5">[Fasilitas pendukung untuk kenyamanan dan keamanan belajar anak]</p>
+            <div class="row g-4">
+                <!-- Fasilitas 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                        <img src="https://placehold.co/600x400/EAEAEA/0A6A3F?text=Foto+Fasilitas+1" class="card-img-top" alt="Fasilitas 1">
+                        <div class="card-body text-center p-4">
+                            <h5 class="card-title fw-bold" style="color: var(--persis-green);">Taman Bermain Outdoor</h5>
+                            <p class="card-text text-muted">[Dilengkapi dengan ayunan, perosotan, dan area ketangkasan untuk melatih motorik kasar anak.]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fasilitas 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                        <img src="https://placehold.co/600x400/EAEAEA/0A6A3F?text=Foto+Fasilitas+2" class="card-img-top" alt="Fasilitas 2">
+                        <div class="card-body text-center p-4">
+                            <h5 class="card-title fw-bold" style="color: var(--persis-green);">Ruang Kelas Nyaman</h5>
+                            <p class="card-text text-muted">[Ruang kelas yang bersih, berventilasi baik/ber-AC, serta dilengkapi dengan Alat Peraga Edukatif (APE).]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fasilitas 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                        <img src="https://placehold.co/600x400/EAEAEA/0A6A3F?text=Foto+Fasilitas+3" class="card-img-top" alt="Fasilitas 3">
+                        <div class="card-body text-center p-4">
+                            <h5 class="card-title fw-bold" style="color: var(--persis-green);">Perpustakaan Mini</h5>
+                            <p class="card-text text-muted">[Koleksi buku-buku cerita Islami dan pengetahuan dasar yang menarik minat baca anak sejak dini.]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+    <section id="galeri">
+        <div class="container">
+            <h2 class="section-title">Galeri Kegiatan</h2>
+            <p class="text-center mb-5">[Berikut adalah dokumentasi keceriaan dan aktivitas belajar mengajar di RA PERSIS 84]</p>
+            <div class="row g-4">
+                <!-- Grid Foto (Ganti URL placehold.co dengan URL gambar asli nanti) -->
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://placehold.co/600x400/EAEAEA/0A6A3F?text=Foto+Kegiatan+1" class="gallery-img" alt="Kegiatan 1">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://placehold.co/600x400/EAEAEA/0A6A3F?text=Foto+Kegiatan+2" class="gallery-img" alt="Kegiatan 2">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://placehold.co/600x400/EAEAEA/0A6A3F?text=Foto+Kegiatan+3" class="gallery-img" alt="Kegiatan 3">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://placehold.co/600x400/EAEAEA/0A6A3F?text=Foto+Kegiatan+4" class="gallery-img" alt="Kegiatan 4">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://placehold.co/600x400/EAEAEA/0A6A3F?text=Foto+Kegiatan+5" class="gallery-img" alt="Kegiatan 5">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="https://placehold.co/600x400/EAEAEA/0A6A3F?text=Foto+Kegiatan+6" class="gallery-img" alt="Kegiatan 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak & Lokasi Section -->
+    <section id="kontak">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="row mt-5">
+                <div class="col-md-5 mb-4">
+                    <h4 class="fw-bold mb-3" style="color: var(--persis-green);">Informasi Pendaftaran & Kontak</h4>
+                    <p class="mb-2"><i class="fa-solid fa-location-dot text-danger me-2"></i> <strong>Alamat:</strong> <br> [Masukkan alamat lengkap RA PERSIS 84 di sini. RT/RW, Desa, Kecamatan, Kota/Kabupaten, Kode Pos]</p>
+                    <p class="mb-2"><i class="fa-solid fa-phone text-success me-2"></i> <strong>WhatsApp:</strong> <br> [0812-XXXX-XXXX]</p>
+                    <p class="mb-4"><i class="fa-solid fa-envelope text-primary me-2"></i> <strong>Email:</strong> <br> [email.sekolah@contoh.com]</p>
+                    
+                    <!-- Ganti nomor "628xxxxxxxx" dengan nomor WA asli setelah wawancara -->
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20RA%20PERSIS%2084,%20saya%20ingin%20bertanya%20mengenai%20pendaftaran%20murid%20baru." target="_blank" class="btn btn-custom-yellow w-100 shadow">
+                        <i class="fa-brands fa-whatsapp fa-lg"></i> Chat WhatsApp Sekarang
+                    </a>
+                </div>
+                <div class="col-md-7">
+                    <!-- Placeholder untuk Google Maps Iframe -->
+                    <!-- Ganti nilai src="" di bawah ini dengan link embed dari Google Maps asli -->
+                    <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126907.08581023777!2d106.74558238714081!3d-6.284242691583023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d8546ad633d%3A0x79e8de8965402078!2sJakarta%20Selatan%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <!-- Social Media Section -->
+            <div class="social-icons mb-4">
+                <a href="[LINK_FACEBOOK]" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="[LINK_INSTAGRAM]" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="[LINK_TIKTOK]" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            </div>
+            
+            <p class="mb-0">&copy; 2026 RA PERSIS 84. All Rights Reserved.</p>
+            <small>Didesain oleh [Nama Tim/Anda] - Mahasiswa Sistem Informasi</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle (Includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // 1. Auto-close mobile menu when a nav-link is clicked
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuToggle = document.getElementById('navbarResponsive');
+        
+        // This utilizes Bootstrap's built-in collapse instance
+        navLinks.forEach((l) => {
+            l.addEventListener('click', () => {
+                if (menuToggle.classList.contains('show')) {
+                    // Create instance of bootstrap collapse and toggle it
+                    const bsCollapse = new bootstrap.Collapse(menuToggle, {
+                        toggle: false
+                    });
+                    bsCollapse.hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
